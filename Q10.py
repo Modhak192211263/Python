@@ -1,17 +1,31 @@
-def frequency(s):
-    freq=[0]*26
-    n=len(s)
-    for i in range(n):
-        freq[ord(s[i])-ord('a')]+=1
-    for i in range(n):
-        add=freq[ord(s[i])-ord('a')]%26
-        if (ord(s[i])+add<=ord('z')):
-            s[i]=chr(ord(s[i])+add)
-        else:
-            add=(ord(s[i])+add)-(ord('z'))
-            s[i]=chr(ord('a')+add-1)
-    print("".join(s))
-
-#main
-string=input("Enter a string: ")
-frequency([i for i in string])
+def factors(x):
+    count=0
+    print("\n")
+    print("The factors of",x,"are: ")
+    for i in range(1,x+1):
+        if x%i==0:
+            print(i)
+            count=count+1
+            if(count==m):
+                break
+n=float(input("Enter the value of N: "))
+m=float(input("Enter the number of factor M: "))
+count=0
+a=1;
+fact=[]
+if(n<=0 or m<=0):
+    print("Invalid input")
+    exit()
+else:
+    while count<n:
+        sum=0
+        for b in range(1,(a//2)+1):
+            if a%b==0:
+                sum=sum+b
+        if sum==a:
+            print("\n",a,end='')
+            fact.append(a)
+            count+=1
+        a+=1
+for i in fact:
+    factors(i)

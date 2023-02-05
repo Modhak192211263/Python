@@ -1,19 +1,7 @@
-E=[]
-L=[]
-T = int(input("Enter value of T: "))
-for i in range(T):
-    e=int(input("Enter the ENTRY list: "))
-    E.append(e)
-print(E)
-print("\n")
-for i in range(T):
-    l=int(input("Enter the LEAVING list: "))
-    L.append(l)
-print(L)
-print("\n")
-Sum=0
-Max=0
-for i in range(T):
-    Sum+=E[i]-L[i]
-    Max=max(Sum,Max)
-print("Maximum no. of guests present on cruise: ", Max)
+a=float(input("Enter the number: "))
+b=int(input("Enter the number of rows: "))
+for i in range(b):
+    for j in range(i+1):
+        print("%.1f"%a, end=" ")
+        a = a+0.1
+    print()
