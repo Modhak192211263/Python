@@ -1,26 +1,17 @@
-print("Enter * to exit...")
-str1=""
-L=[]
-l=0
-u=0
-n=0
-for i in range(0,1000):
-    a = input("Enter any character:")
-    L.append(a)
-    if (a=="*"):
-        break
-
-for i in L:
-    str1+=i
-    
-for i in str1:
-    if (i.islower()):
-        l+=1
-    elif (i.isupper()):
-        u+=1
-    elif (i.isdigit()):
-        n+=1
-
-print("Total count of lower case :",l)
-print("Total count of upper case :",u)
-print("Total count of numbers :",n)
+def sumsquare(l):
+   odd=0
+   even=0
+   for i in l:
+       if i%2==0:
+           even = even + i**2
+       else:
+           odd = odd + i**2
+   l=[odd,even]
+   return(l)
+l=[]
+a=int(input("Enter number of elements: "))
+for i in range(0,a):
+    ele=int(input("Enter the value: "))
+    l.append(ele)
+print(l)
+print(sumsquare(l))

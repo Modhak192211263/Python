@@ -1,9 +1,7 @@
-n=int(input("Enter the row limit: "))
-for i in range(1,n+1):
-    for j in range(0, n-i+1):
-        print(' ', end='')
-    c=1
-    for j in range(1,i+1):
-        print(' ', c, sep='', end='')
-        c=c*(i-j)//j
-    print()
+a=int(input("Number of Fresh Loaves purchased: "))
+b=int(input("Number of Day Old Loaves purchased: "))
+print("\n")
+print("Regular Price: Rs. 185")
+print("Amount of new loaves: ", a*185)
+print("Amount of day old loaves: ",(a*185)*(60/100))
+print("Total Amount to be paid: ",(a*185)+((a*185)*(60/100)))

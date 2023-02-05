@@ -1,30 +1,22 @@
-l=[]
-a=int(input("Enter number of elements: "))
-for i in range(0,a):
-    ele=int(input("Enter the value: "))
-    l.append(ele)
-print(l)
-m=int(input("\nWhich largest element do you want to find? "))
-l.sort(reverse=True)
-if(m==1):
-    print("\nYour",m,"st largest element is: ",l[0])
-elif(m==2):
-    print("\nYour",m,"nd largest element is: ",l[1])
-elif(m==3):
-    print("\nYour",m,"rd largest element is: ",l[2])
-else:
-    print("\nYour",m,"th largest element is: ",l[m-1])
+max_char=256
+def isomorphic(str1, str2):
+    m=len(str1)
+    n=len(str2)
+    if m!=n:
+        return False
+    mark=[False]*max_char
+    map=[-1]*max_char
+    for i in range(n):
+        if map[ord(str1[i])]==-1:
+            if mark[ord(str2[i])]==True:
+                return False
+            mark[ord(str2[i])]=True
+            map[ord(str1[i])]=str2[i]
+        elif map[ord(str1[i])]!= str2[i]:
+            return False
+    return True
 
-n=int(input("\nWhich smallest element do you want to find? "))
-l.sort(reverse=False)
-if(n==1):
-    print("\nYour",n,"st smallest element is: ",l[0])
-elif(n==2):
-    print("\nYour",n,"nd smallest element is: ",l[1])
-elif(n==3):
-    print("\nYour",n,"rd smallest element is: ",l[2])
-else:
-    print("\nYour",n,"th smallest element is: ",l[n-1])
-
-print("The sum of",l[m],"and",l[n],"is: ", l[m]+l[n])
-print("The difference of",l[m],"and",l[n],"is: ", l[m]-l[n])
+#main
+a=str(input("Enter string 1: "))
+b=str(input("Enter string 2: "))
+print(isomorphic(a,b))

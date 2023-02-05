@@ -1,15 +1,13 @@
-def position(str1, str2):
-    a=str1.replace('  ',' ')
-    b=str2.replace('  ',' ')
-    if(len(a)<len(b)):
-        length=len(a)
-    else:
-        length=len(b)
+def countstring(n, start):
+    if n==0:
+        return 1
     count=0
-    for i in range(length):
-        if(a[i]!=b[i]):
-            count=count+1
-    print(length-count)
-str1=str(input("Enter string 1: "))
-str2=str(input("Enter string 2: "))
-position(str1, str2)
+    for i in range(start, 5):
+        count+=countstring(n-1, i)
+    return count
+
+def countvowel(n):
+    return countstring(n,0)
+
+n=int(input("Enter the length of the string: "))
+print(countvowel(n))

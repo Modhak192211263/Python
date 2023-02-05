@@ -1,12 +1,19 @@
-def fact(n):
-    return 1 if (n==1 or n==0) else n * fact(n - 1);
-def factors(n):
-    for i in range(1,n+1):
-        if n%i==0:
-            print(i)
-n = int(input("Enter the number: "))
-print("Factorial of",n,"is",fact(n))
-print("\n")
-print("And the factors of",n,"are: ")
-factors(n)
+def isnumber(s: str) -> bool:
+    num, exp, sign, dec=False, False, False, False
+    for c in s:
+        if c>='0' and c<='9': num=True
+        elif c=='e' or c=='E':
+            if exp or not num: return False
+            else: exp, num, sign, dec=True, False, False, False
+        elif c=='+' or c=='-':
+            if sign or num or dec: return False
+            else: sign=True
+        elif c=='.':
+            if dec or exp: return False
+            else: dec=True
+        else: return False
+    return num
 
+#main
+s=input("Enter a number: ")
+print(isnumber(s))
